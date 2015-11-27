@@ -1,0 +1,27 @@
+ser=serial.Serial("/dev/ttyUSB1",38400)
+
+if(ser.isOpen()==False):
+ser.open()
+a = 'a'
+st = ""
+while True:
+try:
+    #sys.stdout.write(ser.read())
+    #print ord(ser.read()),
+
+    ser.flushInput()
+    a = ser.read()
+    st = ""
+    while(a != chr(255)):
+        a = ser.read()
+        #print "Py Sync :", ord(a)
+    for i in range (0,15):
+        st += ser.read()
+    sys.stdout.flush()
+    sys.stdout.write(st)
+    #time.sleep(0.06)
+
+except KeyboardInterrupt:
+    ser.close()
+    print "closed"
+    break

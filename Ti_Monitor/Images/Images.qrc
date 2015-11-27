@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/Background">
+        <file>bg4.png</file>
+        <file>bulb_on.png</file>
+        <file>bulb_red.png</file>
+    </qresource>
+</RCC>
